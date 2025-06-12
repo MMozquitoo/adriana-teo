@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adriana & Teo - Notre Mariage</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background: #f8f7ed;
+        font-family: "Lato", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .main-nav {
+        background: transparent;
+        box-shadow: none;
+      }
+      .logo {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        letter-spacing: 2px;
+        color: #222;
+        text-decoration: none;
+      }
+      .hero-collage {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 40px;
+        margin-bottom: 40px;
+      }
+      .collage-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+      .collage-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
+        margin-bottom: 1.5rem;
+      }
+      .collage-img {
+        width: 140px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      .collage-text {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: #111;
+        text-align: center;
+        margin: 0.5rem 0;
+      }
+      .bienvenue {
+        text-align: center;
+        margin: 2rem 0 1.5rem;
+      }
+      .bienvenue-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        letter-spacing: 1px;
+      }
+      .bienvenue-text {
+        font-size: 0.98rem;
+        color: #444;
+        max-width: 500px;
+        margin: 0 auto;
+        line-height: 1.6;
+      }
+      .cta-btn {
+        display: block;
+        margin: 2.5rem auto 0;
+        padding: 1.1rem 2.5rem;
+        background: #222;
+        color: #fff;
+        font-family: "Lato", sans-serif;
+        font-size: 1.1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        text-decoration: none;
+        letter-spacing: 1px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        transition: background 0.2s;
+        position: relative;
+        overflow: hidden;
+      }
+      .cta-btn:hover {
+        background: #444;
+      }
+      .cta-btn::before {
+        content: "🌸";
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1rem;
+      }
+      .cta-btn::after {
+        content: "🌺";
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1rem;
+      }
+      .hero-large {
+        margin: 3rem 0;
+        display: flex;
+        align-items: center;
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 2rem;
+      }
+      .hero-large-img {
+        width: 50%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 12px 0 0 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      }
+      .hero-large-text {
+        width: 50%;
+        padding: 3rem;
+        background: #fff;
+        border-radius: 0 12px 12px 0;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hero-large-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+        color: #222;
+        letter-spacing: 1px;
+      }
+      .hero-large-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+      }
+      .story-section {
+        padding: 3rem 0;
+        background: #fff;
+        margin: 2rem 0;
+      }
+      .story-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        text-align: center;
+      }
+      .story-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        letter-spacing: 1px;
+        color: #222;
+      }
+      .story-text {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+        margin-bottom: 2rem;
+      }
+      .story-quote {
+        font-family: "Playfair Display", serif;
+        font-style: italic;
+        font-size: 1.3rem;
+        color: #666;
+        margin: 2rem 0;
+        padding: 1rem;
+        border-left: 3px solid #ddd;
+      }
+      @media (max-width: 600px) {
+        .collage-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+        .collage-img {
+          width: 90px;
+          height: 110px;
+        }
+      }
+      @media (max-width: 768px) {
+        .hero-large {
+          flex-direction: column;
+          padding: 0 1rem;
+        }
+        .hero-large-img,
+        .hero-large-text {
+          width: 100%;
+          border-radius: 12px;
+          margin-bottom: 1rem;
+        }
+        .hero-large-text {
+          padding: 2rem;
+          height: auto;
+        }
+      }
+      .hero-clean {
+        width: 100vw;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        margin-bottom: 2rem;
+      }
+      .hero-clean-content {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1200px;
+        padding: 0 2rem;
+      }
+      .hero-clean-text {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-bottom: 3rem;
+      }
+      .hero-clean-subtitle {
+        font-size: 1.1rem;
+        color: #444;
+        margin-bottom: 1.2rem;
+        font-family: "Lato", sans-serif;
+      }
+      .hero-clean-title {
+        font-family: "Playfair Display", serif;
+        font-size: 3.2rem;
+        font-weight: 700;
+        margin: 0 0 1.2rem 0;
+        color: #181818;
+        letter-spacing: 2px;
+      }
+      .hero-clean-date {
+        font-size: 1.1rem;
+        color: #444;
+        margin-bottom: 2.2rem;
+        font-family: "Lato", sans-serif;
+      }
+      .hero-clean-btn {
+        display: inline-block;
+        padding: 0.9rem 2.2rem;
+        background: #fff;
+        color: #181818;
+        border: 1.5px solid #181818;
+        border-radius: 30px;
+        font-size: 1.1rem;
+        font-family: "Lato", sans-serif;
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: background 0.2s, color 0.2s, border 0.2s;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
+      .hero-clean-btn:hover {
+        background: #181818;
+        color: #fff;
+        border: 1.5px solid #181818;
+      }
+      .hero-clean-img-container {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+      }
+      .hero-clean-img {
+        width: 370px;
+        height: 420px;
+        object-fit: cover;
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+      }
+      @media (max-width: 900px) {
+        .hero-clean-content {
+          flex-direction: column;
+          align-items: center;
+          padding: 0 1rem;
+        }
+        .hero-clean-text {
+          align-items: center;
+          padding-bottom: 1.5rem;
+        }
+        .hero-clean-img-container {
+          justify-content: center;
+        }
+        .hero-clean-img {
+          width: 90vw;
+          max-width: 350px;
+          height: 340px;
+        }
+      }
+      .contactanos-section {
+        width: 100vw;
+        background: #fff;
+        padding: 4rem 0 3rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contactanos-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        max-width: 1100px;
+        width: 100%;
+        padding: 0 2rem;
+        gap: 3rem;
+      }
+      .contactanos-image-half {
+        flex: 1;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .contactanos-image-half img {
+        width: 320px;
+        max-width: 90vw;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+      }
+      .contactanos-text-half {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+      }
+      .contactanos-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: #181818;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+      }
+      .contactanos-details {
+        font-size: 1.1rem;
+        color: #444;
+        line-height: 2;
+      }
+      .contactanos-details a {
+        color: #181818;
+        text-decoration: underline;
+      }
+      @media (max-width: 900px) {
+        .contactanos-content {
+          flex-direction: column;
+          gap: 2rem;
+          align-items: center;
+        }
+        .contactanos-image-half {
+          justify-content: center;
+        }
+        .contactanos-text-half {
+          align-items: center;
+          text-align: center;
+        }
+      }
+      .gift-section {
+        width: 100vw;
+        background: #fff;
+        padding: 4rem 0 3rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .gift-content {
+        max-width: 700px;
+        background: var(--color-rose);
+        border-radius: 18px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+        padding: 3rem 2rem;
+        text-align: center;
+      }
+      .gift-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1.2rem;
+      }
+      .gift-title {
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
+        color: #181818;
+        margin-bottom: 1.5rem;
+        letter-spacing: 1px;
+      }
+      .gift-text {
+        font-size: 1.1rem;
+        color: #444;
+        line-height: 2;
+      }
+      @media (max-width: 900px) {
+        .gift-content {
+          padding: 2rem 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="main-nav">
+      <div class="nav-container">
+        <a href="/" class="logo">Adriana & Teo</a>
+        <div class="nav-spacer"></div>
+        <button class="mobile-menu-btn" aria-label="Menu" id="sidebarToggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <div class="sidebar" id="sidebarMenu">
+        <ul class="nav-links">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#notre-histoire">Notre histoire</a></li>
+          <li><a href="#formulaire">Formulaire</a></li>
+          <li><a href="#hebergement">Hébergement</a></li>
+          <li><a href="#contact">Contactanos</a></li>
+        </ul>
+      </div>
+      <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    </nav>
+
+    <!-- Hero Section Clean -->
+    <section class="hero-clean">
+      <div class="hero-clean-content">
+        <div class="hero-clean-text">
+          <div class="hero-clean-subtitle">Nous allons nous marier</div>
+          <h1 class="hero-clean-title">ADRIANA & TEO</h1>
+          <div class="hero-clean-date">
+            Vendredi, 15 mai 2026<br />Apt, Mane & Céreste, France
+          </div>
+          <a href="/rsvp.html" class="hero-clean-btn">Inscrivez-vous</a>
+        </div>
+        <div class="hero-clean-img-container">
+          <img src="hero3.jpg" alt="Adriana & Teo" class="hero-clean-img" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section" id="notre-histoire">
+      <div class="story-container">
+        <h2 class="story-title">Notre Histoire</h2>
+        <p class="story-text">
+          Notre histoire a commencé en novembre 2022, au détour d'une rue, grâce
+          à notre ami Florian… mais surtout, grâce à Dieu. Moi, venue de la
+          région parisienne, lui, originaire de Haute-Savoie – tout nous
+          opposait, sauf l'essentiel.
+        </p>
+        <p class="story-text">
+          Car ce jour-là, Dieu a guidé nos pas l'un vers l'autre. Ce fut un coup
+          de foudre, une évidence. Deux âmes venues de loin, réunies par Sa
+          volonté pour ne former qu'un seul chemin.
+        </p>
+        <div class="story-quote">
+          "Depuis, notre amour grandit chaque jour, avec la certitude que nous
+          sommes, l'un pour l'autre, ce don précieux qu'Il avait préparé."
+        </div>
+      </div>
+    </section>
+
+    <!-- Hebergement Section -->
+    <section class="hotels-section" id="hebergement">
+      <div class="container">
+        <h2>LIEU DE LA CÉRÉMONIE</h2>
+
+        <!-- Map Section -->
+        <div class="map-container-large">
+          <iframe
+            src="https://www.google.com/maps?q=LES+PRAIRIES+DE+L'ENCR%C3%8AME&output=embed"
+            width="100%"
+            height="450"
+            style="border: 0; border-radius: 16px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+
+        <!-- Options de transport animées -->
+        <section class="transport-animated-section">
+          <h3 class="transport-title">Options de transport</h3>
+          <p class="transport-intro">
+            Pour faciliter votre arrivée, voici les différentes options pour
+            rejoindre le lieu de l'hébergement :
+          </p>
+          <div class="transport-cards">
+            <div class="transport-card-anim">
+              <span class="transport-icon train">🚆</span>
+              <div class="transport-card-content">
+                <h4>Train + Bus</h4>
+                <p>
+                  Depuis votre destination (Paris, Alsace ou Genève) →
+                  Aix-en-Provence TGV ou Marseille Saint-Charles en train. Puis
+                  bus ou transport à la demande jusqu'à Céreste.
+                </p>
+              </div>
+            </div>
+            <div class="transport-card-anim">
+              <span class="transport-icon car">🚗</span>
+              <div class="transport-card-content">
+                <h4>Voiture</h4>
+                <p>
+                  Location possible à Aix-en-Provence TGV ou Marseille
+                  Saint-Charles. Trajet jusqu'à Céreste : environ 1h30.
+                </p>
+              </div>
+            </div>
+            <div class="transport-card-anim">
+              <span class="transport-icon plane">✈️</span>
+              <div class="transport-card-content">
+                <h4>Avion + Transports Locaux</h4>
+                <p>
+                  Vol jusqu'à Marseille Provence → Navette jusqu'à Marseille
+                  Saint-Charles → Train/Bus jusqu'à Apt → Ligne 989 ou taxi
+                  jusqu'à Céreste.
+                </p>
+              </div>
+            </div>
+            <div class="transport-card-anim">
+              <span class="transport-icon covoit">🤝</span>
+              <div class="transport-card-content">
+                <h4>Covoiturage</h4>
+                <p>
+                  Contactez-nous si vous souhaitez partager un trajet avec
+                  d'autres invités !
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- Gift Section -->
+    <section class="gift-section" id="cadeaux">
+      <div class="gift-content">
+        <div class="gift-icon">🎁</div>
+        <h2 class="gift-title">Un petit mot doux sur les cadeaux</h2>
+        <div class="gift-text">
+          <p>
+            Votre présence à nos côtés pour célébrer ce moment si précieux
+            compte plus que tout pour nous.<br />
+            Votre présence à nos côtés est déjà le plus beau des cadeaux.
+          </p>
+          <p>
+            Mais si vous souhaitez tout de même nous laisser une petite
+            attention, une URNE 🗳️ sera mise à disposition le jour du mariage
+            pour nous aider à construire nos jolis projets à deux – qu'il
+            s'agisse d'un voyage, d'un nid douillet ou de souvenirs
+            inoubliables.
+          </p>
+          <p>
+            Un immense merci, du fond du cœur, pour votre présence, votre
+            gentillesse et votre amour ❤️
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Form Section -->
+    <section class="rsvp-section" id="formulaire">
+      <div class="container">
+        <main class="rsvp-form">
+          <h2>Confirmez votre présence</h2>
+          <form
+            id="rsvpForm"
+            action="https://formspree.io/f/mzzroyoe"
+            method="POST"
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nouvelle réponse RSVP - Adriana & Teo"
+            />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="#" />
+
+            <div class="form-group">
+              <label for="name"
+                >Nom complet <span class="required">*</span></label
+              >
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email <span class="required">*</span></label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Téléphone</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+              <label>Assistance <span class="required">*</span></label>
+              <div class="checkbox-group">
+                <input
+                  type="radio"
+                  id="attending"
+                  name="attendance"
+                  value="yes"
+                  required
+                />
+                <label for="attending">Je serai présent(e)</label>
+              </div>
+              <div class="checkbox-group">
+                <input
+                  type="radio"
+                  id="not-attending"
+                  name="attendance"
+                  value="no"
+                />
+                <label for="not-attending"
+                  >Je ne pourrai pas être présent(e)</label
+                >
+              </div>
+            </div>
+
+            <div class="form-group attendance-details">
+              <label for="adults"
+                >Nombre d'adultes <span class="required">*</span></label
+              >
+              <input
+                type="number"
+                id="adults"
+                name="adults"
+                min="1"
+                value="1"
+                required
+              />
+            </div>
+
+            <div class="form-group attendance-details">
+              <label for="children">Nombre d'enfants</label>
+              <input
+                type="number"
+                id="children"
+                name="children"
+                min="0"
+                value="0"
+              />
+            </div>
+
+            <div class="form-group attendance-details">
+              <label for="children_ages">Âges des enfants</label>
+              <input
+                type="text"
+                id="children_ages"
+                name="children_ages"
+                placeholder="Ex: 5, 7, 10"
+              />
+            </div>
+
+            <div class="form-group attendance-details">
+              <label for="accommodation">Hébergement</label>
+              <select id="accommodation" name="accommodation">
+                <option value="">Sélectionnez une option</option>
+                <option value="hotel1">Hôtel 1</option>
+                <option value="hotel2">Hôtel 2</option>
+                <option value="other">Autre</option>
+              </select>
+            </div>
+
+            <div class="form-group attendance-details">
+              <label for="diet">Régime alimentaire</label>
+              <textarea
+                id="diet"
+                name="diet"
+                placeholder="Veuillez indiquer vos restrictions alimentaires ou allergies"
+              ></textarea>
+            </div>
+
+            <div class="form-group attendance-details">
+              <label for="transport">Transport</label>
+              <select id="transport" name="transport">
+                <option value="">Sélectionnez une option</option>
+                <option value="bus">Bus organisé</option>
+                <option value="taxi">Taxi</option>
+                <option value="covoiturage">Covoiturage</option>
+                <option value="own">Transport personnel</option>
+                <option value="other">Autre</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <div class="checkbox-group">
+                <input type="checkbox" id="consent" name="consent" required />
+                <label for="consent"
+                  >J'accepte que mes données soient utilisées pour
+                  l'organisation de l'événement
+                  <span class="required">*</span></label
+                >
+              </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Envoyer</button>
+          </form>
+          <div id="successMessage" class="success-message">
+            Merci pour votre confirmation ! Nous avons bien reçu votre réponse.
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- Thank You Section (Hidden by default) -->
+    <section class="thank-you-section" id="merci" style="display: none">
+      <div class="container">
+        <div class="thank-you-content">
+          <h1>Merci !</h1>
+          <p>
+            Nous avons bien reçu votre confirmation de présence. Nous sommes
+            ravis de vous compter parmi nos invités pour ce jour si spécial.
+          </p>
+          <p>
+            Nous vous contacterons bientôt avec plus de détails sur l'événement.
+          </p>
+          <a href="/" class="back-home">Retour à l'accueil</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contactanos Section -->
+    <section class="contactanos-section" id="contact">
+      <div class="contactanos-content">
+        <div class="contactanos-image-half">
+          <img src="Contactanos.png" alt="Contact Us" />
+        </div>
+        <div class="contactanos-text-half">
+          <h2 class="contactanos-title">
+            Pour toute question, n'hésitez pas à nous appeler
+          </h2>
+          <div class="contactanos-details">
+            <p>
+              Téléphone: <a href="tel:+33627310573">06.27.31.05.73 (Adriana)</a>
+            </p>
+            <p>
+              Téléphone: <a href="tel:+33771181853">07.71.18.18.53 (Teo)</a>
+            </p>
+            <p>Email: <a href="mailto:Adriana@naeem.fr">Adriana@naeem.fr</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-content">
+          <div class="contact-info">
+            <h3>Contact</h3>
+            <p>Téléphone: [Numéro de téléphone]</p>
+            <p>Email: [Adresse email]</p>
+          </div>
+          <div class="footer-links">
+            <a href="#hebergement">Hébergement</a>
+            <a href="#formulaire">RSVP</a>
+            <a href="#transport">Transport</a>
+            <a href="#cadeaux">Lista de Regalos</a>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2024 Adriana & Teo. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="main.js"></script>
+  </body>
+</html>

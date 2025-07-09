@@ -4,6 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Adriana & Teo - Notre Mariage</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="android-chrome-192x192.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="512x512"
+      href="android-chrome-512x512.png"
+    />
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -451,7 +467,7 @@
           <div class="hero-clean-date">
             Vendredi, 15 mai 2026<br />Apt, Mane & Céreste, France
           </div>
-          <a href="/rsvp.html" class="hero-clean-btn">Inscrivez-vous</a>
+          <a href="#formulaire" class="hero-clean-btn">Inscrivez-vous</a>
         </div>
         <div class="hero-clean-img-container">
           <img src="hero3.jpg" alt="Adriana & Teo" class="hero-clean-img" />
@@ -500,6 +516,24 @@
           </iframe>
         </div>
 
+        <!-- Tour 3D Matterport -->
+        <div class="matterport-tour" style="margin: 2rem 0">
+          <iframe
+            width="100%"
+            height="480"
+            src="https://my.matterport.com/show?play=1&amp;lang=en-US&amp;m=j2wRGcpukAH"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; fullscreen; web-share; xr-spatial-tracking;"
+            title="Explore Les Prairies De L’Encreme in 3D"
+            referrerpolicy="unsafe-url"
+            style="
+              border-radius: 16px;
+              box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
+            "
+          ></iframe>
+        </div>
+
         <!-- Options de transport animées -->
         <section class="transport-animated-section">
           <h3 class="transport-title">Options de transport</h3>
@@ -509,7 +543,6 @@
           </p>
           <div class="transport-cards">
             <div class="transport-card-anim">
-              <span class="transport-icon train">🚆</span>
               <div class="transport-card-content">
                 <h4>Train + Bus</h4>
                 <p>
@@ -520,7 +553,6 @@
               </div>
             </div>
             <div class="transport-card-anim">
-              <span class="transport-icon car">🚗</span>
               <div class="transport-card-content">
                 <h4>Voiture</h4>
                 <p>
@@ -530,7 +562,6 @@
               </div>
             </div>
             <div class="transport-card-anim">
-              <span class="transport-icon plane">✈️</span>
               <div class="transport-card-content">
                 <h4>Avion + Transports Locaux</h4>
                 <p>
@@ -541,7 +572,6 @@
               </div>
             </div>
             <div class="transport-card-anim">
-              <span class="transport-icon covoit">🤝</span>
               <div class="transport-card-content">
                 <h4>Covoiturage</h4>
                 <p>
@@ -584,8 +614,16 @@
     <!-- RSVP Form Section -->
     <section class="rsvp-section" id="formulaire">
       <div class="container">
-        <main class="rsvp-form">
-          <h2>Confirmez votre présence</h2>
+        <main class="rsvp-form-elegant">
+          <div class="form-header">
+            <div class="form-ornament">❦</div>
+            <h2 class="form-title">Confirmation de Présence</h2>
+            <p class="form-subtitle">
+              Nous avons l'honneur de vous inviter à confirmer votre présence
+            </p>
+            <div class="form-ornament">❦</div>
+          </div>
+
           <form
             id="rsvpForm"
             action="https://formspree.io/f/mzzroyoe"
@@ -599,148 +637,185 @@
             <input type="hidden" name="_template" value="table" />
             <input type="hidden" name="_next" value="#" />
 
-            <div class="form-group">
-              <label for="name"
-                >Nom complet <span class="required">*</span></label
-              >
-              <input type="text" id="name" name="name" required />
-            </div>
-
-            <div class="form-group">
-              <label for="email">Email <span class="required">*</span></label>
-              <input type="email" id="email" name="email" required />
-            </div>
-
-            <div class="form-group">
-              <label for="phone">Téléphone</label>
-              <input type="tel" id="phone" name="phone" />
-            </div>
-
-            <div class="form-group">
-              <label>Assistance <span class="required">*</span></label>
-              <div class="checkbox-group">
-                <input
-                  type="radio"
-                  id="attending"
-                  name="attendance"
-                  value="yes"
-                  required
-                />
-                <label for="attending">Je serai présent(e)</label>
+            <!-- Informations Personnelles -->
+            <div class="form-section">
+              <h3 class="section-title">Informations Personnelles</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name"
+                    >Nom complet <span class="required">*</span></label
+                  >
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Votre nom complet"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="email"
+                    >Adresse email <span class="required">*</span></label
+                  >
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="votre@email.com"
+                  />
+                </div>
               </div>
-              <div class="checkbox-group">
+              <div class="form-group">
+                <label for="phone">Numéro de téléphone</label>
                 <input
-                  type="radio"
-                  id="not-attending"
-                  name="attendance"
-                  value="no"
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+33 6 12 34 56 78"
                 />
-                <label for="not-attending"
-                  >Je ne pourrai pas être présent(e)</label
+              </div>
+            </div>
+
+            <!-- Confirmation de Présence -->
+            <div class="form-section">
+              <h3 class="section-title">Confirmation de Présence</h3>
+              <div class="attendance-options">
+                <div class="attendance-option">
+                  <input
+                    type="radio"
+                    id="attending"
+                    name="attendance"
+                    value="yes"
+                    required
+                  />
+                  <label for="attending">
+                    <span class="option-icon">✓</span>
+                    <span class="option-text"
+                      >J'aurai l'honneur d'assister à votre mariage</span
+                    >
+                  </label>
+                </div>
+                <div class="attendance-option">
+                  <input
+                    type="radio"
+                    id="not-attending"
+                    name="attendance"
+                    value="no"
+                  />
+                  <label for="not-attending">
+                    <span class="option-icon">✗</span>
+                    <span class="option-text"
+                      >Je ne pourrai malheureusement pas être présent(e)</span
+                    >
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- Détails de la Présence -->
+            <div class="form-section attendance-details">
+              <h3 class="section-title">Détails de la Présence</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="adults"
+                    >Nombre d'adultes <span class="required">*</span></label
+                  >
+                  <input
+                    type="number"
+                    id="adults"
+                    name="adults"
+                    min="1"
+                    value="1"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="children">Nombre d'enfants</label>
+                  <input
+                    type="number"
+                    id="children"
+                    name="children"
+                    min="0"
+                    value="0"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="children_ages"
+                  >Âges des enfants (si applicable)</label
                 >
+                <input
+                  type="text"
+                  id="children_ages"
+                  name="children_ages"
+                  placeholder="Ex: 5, 7, 10 ans"
+                />
               </div>
             </div>
 
-            <div class="form-group attendance-details">
-              <label for="adults"
-                >Nombre d'adultes <span class="required">*</span></label
-              >
-              <input
-                type="number"
-                id="adults"
-                name="adults"
-                min="1"
-                value="1"
-                required
-              />
+            <!-- Logistique -->
+            <div class="form-section attendance-details">
+              <h3 class="section-title">Logistique</h3>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="accommodation">Hébergement souhaité</label>
+                  <select id="accommodation" name="accommodation">
+                    <option value="">Sélectionnez une option</option>
+                    <option value="hotel1">Hôtel 1</option>
+                    <option value="hotel2">Hôtel 2</option>
+                    <option value="other">Autre</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="transport">Transport préféré</label>
+                  <select id="transport" name="transport">
+                    <option value="">Sélectionnez une option</option>
+                    <option value="bus">Bus organisé</option>
+                    <option value="taxi">Taxi</option>
+                    <option value="covoiturage">Covoiturage</option>
+                    <option value="own">Transport personnel</option>
+                    <option value="other">Autre</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="diet">Régime alimentaire spécial</label>
+                <textarea
+                  id="diet"
+                  name="diet"
+                  placeholder="Veuillez indiquer vos restrictions alimentaires ou allergies (optionnel)"
+                ></textarea>
+              </div>
             </div>
 
-            <div class="form-group attendance-details">
-              <label for="children">Nombre d'enfants</label>
-              <input
-                type="number"
-                id="children"
-                name="children"
-                min="0"
-                value="0"
-              />
-            </div>
-
-            <div class="form-group attendance-details">
-              <label for="children_ages">Âges des enfants</label>
-              <input
-                type="text"
-                id="children_ages"
-                name="children_ages"
-                placeholder="Ex: 5, 7, 10"
-              />
-            </div>
-
-            <div class="form-group attendance-details">
-              <label for="accommodation">Hébergement</label>
-              <select id="accommodation" name="accommodation">
-                <option value="">Sélectionnez une option</option>
-                <option value="hotel1">Hôtel 1</option>
-                <option value="hotel2">Hôtel 2</option>
-                <option value="other">Autre</option>
-              </select>
-            </div>
-
-            <div class="form-group attendance-details">
-              <label for="diet">Régime alimentaire</label>
-              <textarea
-                id="diet"
-                name="diet"
-                placeholder="Veuillez indiquer vos restrictions alimentaires ou allergies"
-              ></textarea>
-            </div>
-
-            <div class="form-group attendance-details">
-              <label for="transport">Transport</label>
-              <select id="transport" name="transport">
-                <option value="">Sélectionnez une option</option>
-                <option value="bus">Bus organisé</option>
-                <option value="taxi">Taxi</option>
-                <option value="covoiturage">Covoiturage</option>
-                <option value="own">Transport personnel</option>
-                <option value="other">Autre</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <div class="checkbox-group">
+            <!-- Consentement -->
+            <div class="form-section">
+              <div class="consent-group">
                 <input type="checkbox" id="consent" name="consent" required />
-                <label for="consent"
-                  >J'accepte que mes données soient utilisées pour
-                  l'organisation de l'événement
-                  <span class="required">*</span></label
-                >
+                <label for="consent">
+                  J'accepte que mes données soient utilisées pour l'organisation
+                  de cet événement spécial
+                  <span class="required">*</span>
+                </label>
               </div>
             </div>
 
-            <button type="submit" class="submit-btn">Envoyer</button>
+            <button type="submit" class="submit-btn-elegant">
+              <span class="btn-text">Confirmer ma présence</span>
+              <span class="btn-ornament">❦</span>
+            </button>
           </form>
-          <div id="successMessage" class="success-message">
-            Merci pour votre confirmation ! Nous avons bien reçu votre réponse.
+
+          <div id="successMessage" class="success-message-elegant">
+            <div class="success-icon">✓</div>
+            <h3>Merci pour votre confirmation !</h3>
+            <p>
+              Nous avons bien reçu votre réponse et nous réjouissons de vous
+              compter parmi nos invités.
+            </p>
           </div>
         </main>
-      </div>
-    </section>
-
-    <!-- Thank You Section (Hidden by default) -->
-    <section class="thank-you-section" id="merci" style="display: none">
-      <div class="container">
-        <div class="thank-you-content">
-          <h1>Merci !</h1>
-          <p>
-            Nous avons bien reçu votre confirmation de présence. Nous sommes
-            ravis de vous compter parmi nos invités pour ce jour si spécial.
-          </p>
-          <p>
-            Nous vous contacterons bientôt avec plus de détails sur l'événement.
-          </p>
-          <a href="/" class="back-home">Retour à l'accueil</a>
-        </div>
       </div>
     </section>
 

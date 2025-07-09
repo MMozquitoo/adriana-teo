@@ -82,16 +82,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const attendanceRadios = document.querySelectorAll(
     'input[name="attendance"]'
   );
+  const attendanceDetails = document.querySelectorAll(".attendance-details");
+
   const toggleAttendanceDetails = () => {
-    attendanceRadios.forEach((radio) => {
-      const details = radio.nextElementSibling;
-      if (radio.checked) {
-        details.style.display = "block";
+    const isAttending =
+      document.querySelector('input[name="attendance"]:checked')?.value ===
+      "yes";
+
+    attendanceDetails.forEach((detail) => {
+      if (isAttending) {
+        detail.style.display = "block";
+        detail.style.opacity = "0";
+        detail.style.transform = "translateY(20px)";
+        setTimeout(() => {
+          detail.style.opacity = "1";
+          detail.style.transform = "translateY(0)";
+        }, 100);
       } else {
-        details.style.display = "none";
+        detail.style.display = "none";
       }
     });
   };
+
+  // Agregar event listeners a los radio buttons
+  attendanceRadios.forEach((radio) => {
+    radio.addEventListener("change", toggleAttendanceDetails);
+  });
 
   // Manejo del envío del formulario
   const form = document.getElementById("rsvpForm");
@@ -99,10 +115,13 @@ document.addEventListener("DOMContentLoaded", () => {
     form.addEventListener("submit", function (event) {
       event.preventDefault();
 
-      const submitBtn = form.querySelector(".submit-btn");
-      const originalText = submitBtn.textContent;
-      submitBtn.textContent = "Envoi en cours...";
+      const submitBtn = form.querySelector(".submit-btn-elegant");
+      const btnText = submitBtn.querySelector(".btn-text");
+      const originalText = btnText.textContent;
+
+      btnText.textContent = "Envoi en cours...";
       submitBtn.disabled = true;
+      submitBtn.style.opacity = "0.7";
 
       fetch(form.action, {
         method: "POST",
@@ -115,9 +134,18 @@ document.addEventListener("DOMContentLoaded", () => {
           if (response.ok) {
             form.style.display = "none";
             document.getElementById("successMessage").style.display = "block";
-            document.getElementById("merci").style.display = "block"; // Mostrar la sección de agradecimiento
-            // Opcional: Desplazarse a la sección de agradecimiento
-            // document.getElementById("merci").scrollIntoView({ behavior: "smooth" });
+            document.getElementById("merci").style.display = "block";
+
+            // Animación de aparición del mensaje de éxito
+            const successMessage = document.getElementById("successMessage");
+            successMessage.style.opacity = "0";
+            successMessage.style.transform = "translateY(20px)";
+            successMessage.style.display = "block";
+
+            setTimeout(() => {
+              successMessage.style.opacity = "1";
+              successMessage.style.transform = "translateY(0)";
+            }, 100);
           } else {
             throw new Error("Erreur lors de l'envoi");
           }
@@ -129,8 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
           console.error(error);
         })
         .finally(() => {
-          submitBtn.textContent = originalText;
+          btnText.textContent = originalText;
           submitBtn.disabled = false;
+          submitBtn.style.opacity = "1";
         });
     });
 

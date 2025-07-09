@@ -567,13 +567,349 @@ body {
   padding: 80px 0;
   background-color: #f8f7ed;
 }
-.rsvp-form {
-  max-width: 600px;
+/* Formulario Elegante */
+.rsvp-form-elegant {
+  max-width: 800px;
   margin: 0 auto;
+  padding: 3rem;
+  background: linear-gradient(135deg, #ffffff 0%, #fafafa 100%);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.rsvp-form-elegant::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #f4e4bc, #d4af37);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.form-ornament {
+  font-size: 1.5rem;
+  color: #d4af37;
+  margin: 1rem 0;
+  font-family: "Playfair Display", serif;
+}
+
+.form-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  color: #1a1a1a;
+  letter-spacing: 2px;
+  font-style: italic;
+}
+
+.form-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+  letter-spacing: 0.5px;
+}
+
+.form-section {
+  margin-bottom: 2.5rem;
   padding: 2rem;
-  background-color: var(--color-rose);
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  position: relative;
+  padding-left: 1rem;
+}
+
+.section-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 20px;
+  background: linear-gradient(180deg, #d4af37, #f4e4bc);
+  border-radius: 2px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+  color: #333;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: 2px solid rgba(0, 0, 0, 0.08);
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Lato", sans-serif;
+  font-size: 1rem;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+  transform: translateY(-1px);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+.form-group textarea {
+  min-height: 100px;
+  resize: vertical;
+  line-height: 1.6;
+}
+
+.attendance-options {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.attendance-option {
+  position: relative;
+}
+
+.attendance-option input[type="radio"] {
+  display: none;
+}
+
+.attendance-option label {
+  display: flex;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background: #ffffff;
+  border: 2px solid rgba(0, 0, 0, 0.08);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.attendance-option input[type="radio"]:checked + label {
+  border-color: #d4af37;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 175, 55, 0.05),
+    rgba(244, 228, 188, 0.1)
+  );
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+}
+
+.option-icon {
+  font-size: 1.2rem;
+  margin-right: 1rem;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f0f0f0;
+  color: #666;
+  transition: all 0.3s ease;
+}
+
+.attendance-option input[type="radio"]:checked + label .option-icon {
+  background: #d4af37;
+  color: white;
+}
+
+.option-text {
+  font-size: 1rem;
+  color: #333;
+}
+
+.consent-group {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(212, 175, 55, 0.03);
+  border-radius: 10px;
+  border: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.consent-group input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: #d4af37;
+}
+
+.consent-group label {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.submit-btn-elegant {
+  width: 100%;
+  padding: 1.3rem 2rem;
+  background: linear-gradient(135deg, #d4af37, #f4e4bc);
+  color: #1a1a1a;
+  border: none;
+  border-radius: 12px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-btn-elegant:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, #f4e4bc, #d4af37);
+}
+
+.submit-btn-elegant:active {
+  transform: translateY(0);
+}
+
+.btn-text {
+  font-style: italic;
+}
+
+.btn-ornament {
+  font-size: 1.1rem;
+  opacity: 0.8;
+}
+
+.success-message-elegant {
+  display: none;
+  text-align: center;
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #4caf50, #66bb6a);
+  color: white;
+  border-radius: 15px;
+  margin-top: 2rem;
+  box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3);
+}
+
+.success-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.success-message-elegant h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.success-message-elegant p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+.required {
+  color: #d4af37;
+  font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .rsvp-form-elegant {
+    padding: 2rem 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .form-title {
+    font-size: 2rem;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+
+  .attendance-option label {
+    padding: 1rem;
+  }
+
+  .submit-btn-elegant {
+    padding: 1.1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rsvp-form-elegant {
+    padding: 1.5rem 1rem;
+  }
+
+  .form-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.2rem;
+  }
 }
 .rsvp-form h2 {
   font-family: var(--font-title);
@@ -643,48 +979,134 @@ body {
 }
 .attendance-details {
   display: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+#successMessage {
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 /* Thank You Section Styles */
 .thank-you-section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  background: linear-gradient(
-    135deg,
-    var(--color-rose) 0%,
-    var(--color-lavande) 100%
-  );
+  background: #ffffff;
   padding: 2rem;
+  position: relative;
 }
+
+.thank-you-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #d4af37, #f4e4bc, #d4af37);
+}
+
 .thank-you-content {
-  max-width: 600px;
+  max-width: 700px;
   animation: fadeIn 1s ease-out;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  position: relative;
 }
+
+.thank-you-content::before {
+  content: "❦";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2rem;
+  color: #d4af37;
+  background: #ffffff;
+  padding: 0 1rem;
+}
+
 .thank-you-content h1 {
-  font-family: var(--font-title);
-  font-size: 3rem;
+  font-family: "Playfair Display", serif;
+  font-size: 3.5rem;
+  font-weight: 600;
   margin-bottom: 2rem;
-  color: var(--color-text);
+  color: #1a1a1a;
+  letter-spacing: 2px;
+  font-style: italic;
 }
+
 .thank-you-content p {
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   margin-bottom: 2rem;
   line-height: 1.8;
+  color: #444;
+  font-family: "Lato", sans-serif;
 }
+
 .back-home {
   display: inline-block;
-  padding: 1rem 2rem;
-  background-color: var(--color-bleu);
-  color: white;
+  padding: 1.2rem 2.5rem;
+  background: linear-gradient(135deg, #d4af37, #f4e4bc);
+  color: #1a1a1a;
   text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
+  border-radius: 12px;
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+  letter-spacing: 1px;
 }
+
 .back-home:hover {
-  background-color: var(--color-lavande);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, #f4e4bc, #d4af37);
+}
+
+/* Responsive para Thank You Section */
+@media (max-width: 768px) {
+  .thank-you-section {
+    padding: 1rem;
+  }
+
+  .thank-you-content {
+    padding: 2rem 1.5rem;
+    margin: 0 1rem;
+  }
+
+  .thank-you-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .thank-you-content p {
+    font-size: 1.1rem;
+  }
+
+  .back-home {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .thank-you-content {
+    padding: 1.5rem 1rem;
+  }
+
+  .thank-you-content h1 {
+    font-size: 2rem;
+  }
+
+  .thank-you-content p {
+    font-size: 1rem;
+  }
 }
 
 /* General body and navigation styles */
@@ -850,31 +1272,67 @@ body {
   margin-bottom: 2.5rem;
   font-size: 1.1rem;
 }
+/* Tarjetas de transporte minimalistas y sofisticadas */
 .transport-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem 2rem;
+  gap: 2rem;
   justify-content: center;
+  margin-top: 2.5rem;
 }
+
 .transport-card-anim {
-  background: var(--color-rose);
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
-  padding: 2.5rem 1.5rem 1.5rem 1.5rem;
-  width: 270px;
-  min-height: 220px;
+  background: #fff;
+  border: 1.5px solid #d4af37;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.07);
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 320px;
+  min-width: 260px;
+  flex: 1 1 260px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
-  animation: fadeInUp 1s ease;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
+  text-align: center;
 }
-.transport-icon {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  display: inline-block;
-  position: relative;
+
+.transport-card-anim:hover {
+  box-shadow: 0 16px 48px rgba(212, 175, 55, 0.13);
+  border-color: #bfa14a;
+  transform: translateY(-4px) scale(1.03);
 }
+
+.transport-card-content h4 {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.3rem;
+  color: #181818;
+  margin-bottom: 1.2rem;
+  letter-spacing: -1px;
+  font-weight: 600;
+}
+
+.transport-card-content p {
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 900px) {
+  .transport-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+  .transport-card-anim {
+    max-width: 98vw;
+    min-width: 0;
+    width: 100%;
+  }
+}
+
 /* Animaciones específicas */
 .transport-icon.train {
   animation: train-move 2.5s linear infinite;
@@ -933,18 +1391,6 @@ body {
     top: -12px;
   }
 }
-.transport-card-content h4 {
-  font-family: "Playfair Display", serif;
-  font-size: 1.2rem;
-  margin-bottom: 0.7rem;
-  color: #222;
-  text-align: center;
-}
-.transport-card-content p {
-  color: #444;
-  font-size: 1rem;
-  text-align: center;
-}
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -953,19 +1399,6 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-@media (max-width: 900px) {
-  .transport-cards {
-    flex-direction: column;
-    align-items: center;
-  }
-  .transport-card-anim {
-    width: 95vw;
-    max-width: 350px;
-  }
-  .transport-card-anim.covoit {
-    margin-top: 0.5rem;
   }
 }
 .mobile-menu-btn span {
@@ -1064,4 +1497,18 @@ body {
   .contactanos-image-half img {
     max-width: 90vw;
   }
+}
+
+h1,
+h2,
+h3,
+.story-title,
+.gift-title,
+.section-title,
+.hero-clean-title,
+.contactanos-title,
+.footer h3 {
+  font-style: italic !important;
+  font-family: "Playfair Display", serif !important;
+  letter-spacing: -1px !important;
 }

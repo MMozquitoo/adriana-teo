@@ -1,11 +1,64 @@
+@font-face {
+  font-family: "Beautifully Delicious Script";
+  src: url("BDScript-Regular.woff2") format("woff2"),
+    url("BDScript-Regular.woff") format("woff"),
+    url("BDScript-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Beautifully Delicious Script";
+  src: url("BDScript-Bold.woff2") format("woff2"),
+    url("BDScript-Bold.woff") format("woff"),
+    url("BDScript-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  background: #fff5e0;
+  font-family: "Cardo", serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-clean-title,
+.story-title,
+.gift-title,
+.church-title,
+.section-title,
+.form-title,
+.bienvenue-title,
+.collage-title,
+.contactanos-title,
+.footer h3,
+.hotel-content h3,
+.transport-title,
+.transport-intro,
+.gift-icon,
+.form-subtitle,
+.form-ornament {
+  font-family: "Beautifully Delicious Script", cursive !important;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
 :root {
-  --color-rose: #f8f1f1;
+  --color-rose: #fff5e0;
   --color-lavande: #e0c3fc;
   --color-bleu: #8ec5fc;
   --color-text: #333333;
   --color-background: #ffffff;
-  --font-title: "Playfair Display", serif;
-  --font-body: "Lato", sans-serif;
+  --font-title: "Beautifully Delicious Script", cursive;
+  --font-body: "Cardo", serif;
+  --color-main-bg: #fff5ee;
+  --color-sub: #0fefae;
 }
 
 /* Reset y estilos base */
@@ -23,7 +76,7 @@ body {
   font-family: var(--font-body);
   color: var(--color-text);
   line-height: 1.6;
-  background-color: var(--color-background);
+  background-color: var(--color-main-bg);
 }
 
 .container {
@@ -564,8 +617,12 @@ body {
 
 /* RSVP Form styles */
 .rsvp-section {
-  padding: 80px 0;
-  background-color: #f8f7ed;
+  background: #fff5e0 !important;
+}
+.rsvp-section > .container {
+  max-width: none;
+  width: 100%;
+  padding: 0;
 }
 /* Formulario Elegante */
 .rsvp-form-elegant {
@@ -587,7 +644,7 @@ body {
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, #d4af37, #f4e4bc, #d4af37);
+  background: linear-gradient(90deg, #181818, #181818, #181818);
 }
 
 .form-header {
@@ -606,20 +663,22 @@ body {
 
 .form-title {
   font-family: "Playfair Display", serif;
-  font-size: 2.5rem;
-  font-weight: 600;
-  margin: 1rem 0;
+  font-size: 12rem;
+  font-weight: 700;
+  margin: 3rem 0 2rem 0;
   color: #1a1a1a;
   letter-spacing: 2px;
-  font-style: italic;
+  font-style: normal;
 }
 
 .form-subtitle {
-  font-size: 1.1rem;
+  font-family: "Beautifully Delicious Script", cursive;
+  font-size: 6rem;
   color: #666;
-  margin: 0;
+  margin: 0 0 2.5rem 0;
   font-style: italic;
   letter-spacing: 0.5px;
+  text-align: center;
 }
 
 .form-section {
@@ -649,7 +708,7 @@ body {
   transform: translateY(-50%);
   width: 4px;
   height: 20px;
-  background: linear-gradient(180deg, #d4af37, #f4e4bc);
+  background: #181818;
   border-radius: 2px;
 }
 
@@ -735,13 +794,13 @@ body {
 }
 
 .attendance-option input[type="radio"]:checked + label {
-  border-color: #d4af37;
+  border-color: #181818;
   background: linear-gradient(
     135deg,
-    rgba(212, 175, 55, 0.05),
-    rgba(244, 228, 188, 0.1)
+    rgba(24, 24, 24, 0.05),
+    rgba(24, 24, 24, 0.1)
   );
-  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+  box-shadow: 0 4px 12px rgba(24, 24, 24, 0.15);
 }
 
 .option-icon {
@@ -759,7 +818,7 @@ body {
 }
 
 .attendance-option input[type="radio"]:checked + label .option-icon {
-  background: #d4af37;
+  background: #181818;
   color: white;
 }
 
@@ -773,16 +832,16 @@ body {
   align-items: flex-start;
   gap: 1rem;
   padding: 1.5rem;
-  background: rgba(212, 175, 55, 0.03);
+  background: rgba(24, 24, 24, 0.03);
   border-radius: 10px;
-  border: 1px solid rgba(212, 175, 55, 0.1);
+  border: 1px solid rgba(24, 24, 24, 0.1);
 }
 
 .consent-group input[type="checkbox"] {
   width: 20px;
   height: 20px;
   margin-top: 2px;
-  accent-color: #d4af37;
+  accent-color: #181818;
 }
 
 .consent-group label {
@@ -875,9 +934,9 @@ body {
     margin: 0 1rem;
   }
 
-  .form-title {
+  /* .form-title {
     font-size: 2rem;
-  }
+  } */
 
   .form-row {
     grid-template-columns: 1fr;
@@ -903,9 +962,9 @@ body {
     padding: 1.5rem 1rem;
   }
 
-  .form-title {
+  /* .form-title {
     font-size: 1.8rem;
-  }
+  } */
 
   .section-title {
     font-size: 1.2rem;
@@ -1111,8 +1170,8 @@ body {
 
 /* General body and navigation styles */
 body {
-  background: #f8f7ed;
-  font-family: "Lato", sans-serif;
+  background: #fff5ee;
+  font-family: "Cardo", serif;
   margin: 0;
   padding: 0;
 }
@@ -1260,17 +1319,13 @@ body {
   align-items: center;
 }
 .transport-title {
-  font-family: "Playfair Display", serif;
-  font-size: 2rem;
-  color: #181818;
-  margin-bottom: 0.5rem;
-  text-align: center;
+  font-size: 6rem !important;
+  letter-spacing: 2px !important;
 }
 .transport-intro {
-  text-align: center;
-  color: #444;
-  margin-bottom: 2.5rem;
-  font-size: 1.1rem;
+  font-size: 2rem !important;
+  letter-spacing: 2px !important;
+  line-height: 1.6 !important;
 }
 /* Tarjetas de transporte minimalistas y sofisticadas */
 .transport-cards {
@@ -1303,14 +1358,12 @@ body {
   transform: translateY(-4px) scale(1.03);
 }
 
+.transport-card-content {
+  font-size: 1.18rem !important;
+}
 .transport-card-content h4 {
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-size: 1.3rem;
-  color: #181818;
-  margin-bottom: 1.2rem;
-  letter-spacing: -1px;
-  font-weight: 600;
+  font-size: 2.2rem !important;
+  letter-spacing: 1px !important;
 }
 
 .transport-card-content p {
@@ -1460,15 +1513,17 @@ body {
   width: 100%;
   padding: 0 2rem;
   gap: 3rem;
+  margin: 0 auto;
 }
 .contactanos-image-half {
   flex: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
 }
 .contactanos-image-half img {
-  width: 50px;
-  max-width: 50px;
+  width: 300px;
+  max-width: 300px;
   height: auto;
   border-radius: 16px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
@@ -1479,7 +1534,23 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+  color: #181818;
+}
+.contactanos-title {
+  color: #181818;
+  font-size: 3rem !important;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+.contactanos-details {
+  color: #181818;
+}
+.contactanos-details a {
+  color: #181818;
+  text-decoration: underline;
 }
 @media (max-width: 900px) {
   .contactanos-content {
@@ -1500,18 +1571,57 @@ body {
 }
 
 h1,
+.hero-clean-title {
+  font-family: "Beautifully Delicious Script", cursive !important;
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
 h2,
-h3,
 .story-title,
 .gift-title,
+.church-title,
 .section-title,
-.hero-clean-title,
-.contactanos-title,
+.form-title,
 .footer h3,
-section.hotels-section h2 {
-  font-family: "Allura", cursive !important;
-  font-style: normal !important;
-  letter-spacing: 0.5px !important;
+.hotel-content h3,
+.transport-title {
+  font-family: "Beautifully Delicious Script", cursive !important;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+h3,
+.bienvenue-title,
+.collage-title,
+.contactanos-title,
+.transport-intro,
+.gift-icon,
+.form-subtitle,
+.form-ornament {
+  font-family: "Beautifully Delicious Script", cursive !important;
+  font-size: 1.7rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
+}
+
+h4,
+h5,
+h6 {
+  font-family: "Beautifully Delicious Script", cursive !important;
+  font-size: 1.3rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: 0.5px;
 }
 
 .modal-parking {
@@ -1541,20 +1651,15 @@ section.hotels-section h2 {
 }
 
 .parking-gold-btn {
-  background: linear-gradient(90deg, #d4af37 0%, #bfa14a 100%);
-  color: #fff;
-  font-family: "Playfair Display", serif;
-  font-style: italic;
-  font-size: 1.25rem;
-  border: none;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: background 0.2s, color 0.2s;
-  letter-spacing: 1px;
+  background: #444 !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
 }
 .parking-gold-btn:hover {
-  background: linear-gradient(90deg, #bfa14a 0%, #d4af37 100%);
-  color: #222;
+  background: #181818 !important;
+  color: #fff !important;
 }
 .parking-gold-text {
   font-family: "Playfair Display", serif;
@@ -1566,4 +1671,422 @@ section.hotels-section h2 {
 .parking-gold-btn::before,
 .parking-gold-btn::after {
   content: none !important;
+}
+
+.hero-clean {
+  width: 100vw;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff5ee;
+  margin-bottom: 2rem;
+}
+
+/* Asegurar que otras secciones principales no sobrescriban el fondo crema */
+.story-section,
+.contactanos-section,
+.gift-section,
+.hotels-section {
+  background: #fff5ee;
+}
+
+/* Unificación de fondos para todas las secciones y tarjetas */
+.rsvp-section,
+.rsvp-form-elegant,
+.form-header,
+.form-section,
+footer,
+.footer,
+.thank-you-content,
+.gift-content,
+.hotel-card,
+.church-section,
+.church-content {
+  /* background: #fff !important; */
+}
+
+/* Eliminar bordes o sombras que dependan de colores antiguos si es necesario */
+
+/* Fondo uniforme para todas las secciones principales */
+body,
+.story-section,
+.contactanos-section,
+.gift-section,
+.hotels-section,
+.footer,
+.hero-clean,
+.map-container-large {
+  background: #fff5e0 !important;
+}
+
+/* Cuadros y tarjetas que deben ser blancos suaves */
+.rsvp-form-elegant,
+.form-header,
+.form-section,
+.gift-content,
+.hotel-card,
+.thank-you-content,
+.modal-parking > div,
+.church-section,
+.church-content,
+.attendance-option label,
+.consent-group {
+  background: #fff !important;
+}
+
+.hero-clean-title {
+  font-family: "Beautifully Delicious Script", cursive !important;
+  font-size: 5rem !important;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.1;
+  letter-spacing: 0.5px;
+}
+
+.hero-clean-subtitle {
+  font-family: "Cardo", serif !important;
+  font-size: 10rem !important;
+  font-weight: 300 !important;
+  letter-spacing: 0.15em !important;
+  color: #181818 !important;
+  margin-bottom: 1.5rem !important;
+  font-style: normal !important;
+  text-align: center !important;
+}
+
+.hero-clean-date-big {
+  font-size: 3rem !important;
+}
+
+.hero-clean-btn {
+  display: block;
+  margin: 2.5rem auto 0;
+  padding: 1.1rem 2.5rem;
+  background: #181818;
+  color: #fff;
+  font-family: "Cardo", serif;
+  font-size: 1.2rem;
+  border: 2px solid #181818;
+  border-radius: 0;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s, color 0.2s, border 0.2s;
+}
+.hero-clean-btn:hover {
+  background: #fff;
+  color: #181818;
+  border: 2px solid #181818;
+}
+
+.church-section,
+.church-content {
+  background: #fff5e0 !important;
+}
+
+.gift-content {
+  background: #fff !important;
+}
+
+.hero-invitation-block {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  text-align: left;
+  margin: 2rem 0;
+  gap: 0.2rem;
+}
+
+.invitation-date {
+  font-family: "Playfair Display", "Libre Baskerville", "Cormorant Garamond",
+    serif;
+  font-size: 28px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 0.1rem;
+}
+
+.invitation-time-place {
+  font-family: "Playfair Display", "Libre Baskerville", "Cormorant Garamond",
+    serif;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  margin-bottom: 0.1rem;
+}
+
+.invitation-address {
+  font-family: "Playfair Display", "Libre Baskerville", "Cormorant Garamond",
+    serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: #666;
+  margin-bottom: 0.1rem;
+}
+
+.form-title-text {
+  font-family: "Cardo", serif !important;
+  font-size: 3rem;
+  font-weight: bold;
+  margin: 0 0 1.5rem 0;
+  color: #1a1a1a;
+  letter-spacing: 0.02em;
+  font-style: normal;
+  text-align: center;
+}
+.flex-1 {
+  flex: 1;
+}
+.align-center {
+  align-items: center;
+}
+.mb-1-5 {
+  margin-bottom: 1.5rem;
+}
+.italic {
+  font-style: italic;
+}
+.mt-2 {
+  margin-top: 2rem;
+}
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.carousel-container {
+  position: relative;
+  width: 370px;
+  height: 420px;
+  overflow: hidden;
+}
+.carousel-img {
+  width: 370px;
+  height: 420px;
+  object-fit: cover;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.18, 1), opacity 0.4s;
+  border-radius: 0;
+}
+.carousel-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.mt-18 {
+  margin-top: 18px;
+}
+.carousel-btn-group {
+  display: flex;
+  gap: 32px;
+}
+.gap-32 {
+  gap: 32px;
+}
+.carousel-btn {
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carousel-btn:hover {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+.hero-clean-content {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+.hero-clean-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-bottom: 3rem;
+}
+.hero-clean-img-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.hero-clean-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  width: 180px;
+  height: 54px;
+  font-size: 1.1rem;
+  transition: background 0.2s, color 0.2s, border 0.2s;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.hero-clean-btn:hover {
+  background: #fff;
+  color: #000;
+  border: 2px solid #000;
+}
+@media (max-width: 900px) {
+  .hero-clean-content {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+  }
+  .hero-clean-text {
+    align-items: center;
+    padding-bottom: 1.5rem;
+  }
+  .hero-clean-img-container {
+    justify-content: center;
+  }
+  .carousel-container,
+  .carousel-img {
+    width: 90vw;
+    max-width: 350px;
+    height: 340px;
+  }
+}
+
+.story-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  margin: 3rem 0;
+  background: #fff5e0;
+  text-align: center;
+}
+.story-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
+.story-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.story-text {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+.story-quote {
+  text-align: center;
+  font-style: italic;
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
+
+.gift-section {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 0;
+  margin: 3rem 0;
+  background: #fff5e0;
+  text-align: center;
+}
+.gift-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+.gift-title {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-size: 3rem;
+}
+.gift-text {
+  text-align: center;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.info-section-important {
+  width: 100%;
+  background: #fff;
+  padding: 2.5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+.info-important-text {
+  color: #181818;
+  font-size: 2.2rem;
+  font-weight: bold;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  line-height: 1.4;
+}
+
+.rsvp-form-elegant button[type="submit"] {
+  background: #181818;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: none;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.contactanos-section {
+  padding: 4rem 0;
+  margin: 3rem 0;
+  position: relative;
+}
+
+.contactanos-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: #181818;
 }

@@ -1,26 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Sidebar Navigation
-  const sidebarToggle = document.getElementById("sidebarToggle");
-  const sidebarMenu = document.getElementById("sidebarMenu");
-  const sidebarOverlay = document.getElementById("sidebarOverlay");
-
-  sidebarToggle.addEventListener("click", () => {
-    sidebarMenu.classList.toggle("open");
-    sidebarOverlay.classList.toggle("active");
-  });
-
-  sidebarOverlay.addEventListener("click", () => {
-    sidebarMenu.classList.remove("open");
-    sidebarOverlay.classList.remove("active");
-  });
-
-  document.querySelectorAll(".sidebar .nav-links a").forEach((link) => {
-    link.addEventListener("click", () => {
-      sidebarMenu.classList.remove("open");
-      sidebarOverlay.classList.remove("active");
-    });
-  });
-
   // Animación de scroll suave para enlaces internos
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
@@ -60,22 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
     element.style.transform = "translateY(20px)";
     element.style.transition = "opacity 0.5s ease-out, transform 0.5s ease-out";
     observer.observe(element);
-  });
-
-  // Cambio de estilo de la navegación al hacer scroll
-  let lastScroll = 0;
-  const nav = document.querySelector(".main-nav");
-
-  window.addEventListener("scroll", () => {
-    const currentScroll = window.pageYOffset;
-
-    if (currentScroll <= 0) {
-      nav.style.boxShadow = "none";
-    } else {
-      nav.style.boxShadow = "0 2px 10px rgba(0, 0, 0, 0.1)";
-    }
-
-    lastScroll = currentScroll;
   });
 
   // Event listener para los radio buttons de asistencia

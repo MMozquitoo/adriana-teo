@@ -1507,8 +1507,63 @@ h3,
 .section-title,
 .hero-clean-title,
 .contactanos-title,
-.footer h3 {
-  font-style: italic !important;
-  font-family: "Playfair Display", serif !important;
-  letter-spacing: -1px !important;
+.footer h3,
+section.hotels-section h2 {
+  font-family: "Allura", cursive !important;
+  font-style: normal !important;
+  letter-spacing: 0.5px !important;
+}
+
+.modal-parking {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.35);
+  align-items: center;
+  justify-content: center;
+}
+.modal-parking[style*="display: flex"] {
+  display: flex !important;
+}
+
+/* Opcional: mejorar el botón de cierre */
+#closeParkingModal {
+  font-family: "Lato", sans-serif;
+  color: #222;
+  transition: color 0.2s;
+}
+#closeParkingModal:hover {
+  color: #b71c1c;
+}
+
+.parking-gold-btn {
+  background: linear-gradient(90deg, #d4af37 0%, #bfa14a 100%);
+  color: #fff;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: background 0.2s, color 0.2s;
+  letter-spacing: 1px;
+}
+.parking-gold-btn:hover {
+  background: linear-gradient(90deg, #bfa14a 0%, #d4af37 100%);
+  color: #222;
+}
+.parking-gold-text {
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+/* Eliminar los emojis de la cta-btn solo para este botón */
+.parking-gold-btn::before,
+.parking-gold-btn::after {
+  content: none !important;
 }

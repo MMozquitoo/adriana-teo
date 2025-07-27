@@ -167,3 +167,21 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleAttendanceDetails();
   }
 });
+
+// Parking modal logic
+window.addEventListener("DOMContentLoaded", function () {
+  const openBtn = document.getElementById("openParkingModal");
+  const closeBtn = document.getElementById("closeParkingModal");
+  const modal = document.getElementById("parkingModal");
+  if (openBtn && closeBtn && modal) {
+    openBtn.addEventListener("click", () => {
+      modal.style.display = "flex";
+    });
+    closeBtn.addEventListener("click", () => {
+      modal.style.display = "none";
+    });
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) modal.style.display = "none";
+    });
+  }
+});

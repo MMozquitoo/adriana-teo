@@ -27,6 +27,14 @@
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Allura&display=swap"
+      rel="stylesheet"
+    />
     <style>
       body {
         background: #f8f7ed;
@@ -451,7 +459,9 @@
           <li><a href="#accueil">Accueil</a></li>
           <li><a href="#notre-histoire">Notre histoire</a></li>
           <li><a href="#formulaire">Formulaire</a></li>
-          <li><a href="#hebergement">Hébergement</a></li>
+          <li>
+            <a href="#hebergement"><i>Hé</i>bergement</a>
+          </li>
           <li><a href="#contact">Contactanos</a></li>
         </ul>
       </div>
@@ -463,7 +473,7 @@
       <div class="hero-clean-content">
         <div class="hero-clean-text">
           <div class="hero-clean-subtitle">Nous allons nous marier</div>
-          <h1 class="hero-clean-title">ADRIANA & TEO</h1>
+          <h1 class="hero-clean-title">Teo & Adriana</h1>
           <div class="hero-clean-date">
             Vendredi, 15 mai 2026<br />Apt, Mane & Céreste, France
           </div>
@@ -478,7 +488,7 @@
     <!-- Story Section -->
     <section class="story-section" id="notre-histoire">
       <div class="story-container">
-        <h2 class="story-title">Notre Histoire</h2>
+        <h2 class="story-title"><i>Notre Histoire</i></h2>
         <p class="story-text">
           Notre histoire a commencé en novembre 2022, au détour d'une rue, grâce
           à notre ami Florian… mais surtout, grâce à Dieu. Moi, venue de la
@@ -500,23 +510,9 @@
     <!-- Hebergement Section -->
     <section class="hotels-section" id="hebergement">
       <div class="container">
-        <h2>LIEU DE LA CÉRÉMONIE</h2>
+        <h2><i>LIEU DE LA CÉRÉMONIE</i></h2>
 
-        <!-- Map Section -->
-        <div class="map-container-large">
-          <iframe
-            src="https://www.google.com/maps?q=LES+PRAIRIES+DE+L'ENCR%C3%8AME&output=embed"
-            width="100%"
-            height="450"
-            style="border: 0; border-radius: 16px"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          >
-          </iframe>
-        </div>
-
-        <!-- Tour 3D Matterport -->
+        <!-- Tour 3D Matterport (ahora al principio) -->
         <div class="matterport-tour" style="margin: 2rem 0">
           <iframe
             width="100%"
@@ -534,12 +530,182 @@
           ></iframe>
         </div>
 
+        <!-- Map Section -->
+        <div class="map-container-large">
+          <iframe
+            src="https://www.google.com/maps?q=LES+PRAIRIES+DE+L'ENCR%C3%8AME&output=embed"
+            width="100%"
+            height="450"
+            style="border: 0; border-radius: 16px"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+        </div>
+
+        <!-- Lieu de l’église -->
+        <div class="church-section" style="margin: 2.5rem 0">
+          <h2
+            class="church-title"
+            style="
+              font-size: 2.2rem;
+              margin-bottom: 2rem;
+              text-align: center;
+              letter-spacing: 1px;
+            "
+          >
+            Lieu de l'église
+          </h2>
+          <div
+            class="church-content"
+            style="
+              display: flex;
+              align-items: stretch;
+              gap: 2.5rem;
+              flex-wrap: wrap;
+              justify-content: center;
+            "
+          >
+            <img
+              src="marie.jpg"
+              alt="Chapelle Marie"
+              style="
+                width: 400px;
+                max-width: 90vw;
+                height: 340px;
+                object-fit: cover;
+                border-radius: 16px;
+                box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+              "
+            />
+            <div
+              style="
+                flex: 1;
+                min-width: 320px;
+                max-width: 600px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+              "
+            >
+              <iframe
+                src="https://www.google.com/maps?q=43.8759266,5.3946085&output=embed"
+                width="100%"
+                height="340"
+                style="
+                  border: 0;
+                  border-radius: 16px;
+                  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.13);
+                "
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Carte Mairie"
+              ></iframe>
+              <div style="margin-top: 1rem; text-align: center">
+                <p style="font-size: 1.15rem; margin-bottom: 0.5rem">
+                  <strong>Chapelle Marie</strong>
+                </p>
+                <a
+                  href="https://maps.app.goo.gl/zo8w2DLxGR9wRRpk6"
+                  target="_blank"
+                  style="
+                    color: #222;
+                    text-decoration: underline;
+                    font-size: 1rem;
+                  "
+                  >Voir sur Google Maps</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bouton pour ouvrir le popup des parkings -->
+        <div style="margin: 2rem 0">
+          <button
+            id="openParkingModal"
+            class="cta-btn parking-gold-btn"
+            style="margin: 0 auto; display: block; max-width: 320px"
+          >
+            <span class="parking-gold-text">Voir les parkings à proximité</span>
+          </button>
+        </div>
+
+        <!-- Modal Parkings -->
+        <div
+          id="parkingModal"
+          class="modal-parking"
+          style="
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.35);
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div
+            style="
+              background: #fff;
+              border-radius: 16px;
+              max-width: 500px;
+              width: 90vw;
+              padding: 2rem;
+              position: relative;
+              box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+            "
+          >
+            <button
+              id="closeParkingModal"
+              style="
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                cursor: pointer;
+              "
+            >
+              &times;
+            </button>
+            <h3 style="margin-top: 0">Parkings gratuits</h3>
+            <ul style="padding-left: 1.2rem">
+              <li>P : Elzéar Piton – 57 pl – 5mn à pied</li>
+              <li>P : Georges Santoni – 60 pl – 4mn à pied</li>
+              <li>P : Calavon – 300 pl – 2mn à pied</li>
+              <li>P : Charles de Gaulle – 112 pl – 2mn à pied</li>
+              <li>P : Cours Lauze de Perret – 139 pl – 1mn à pied</li>
+              <li>P : Camille Pelletan – 65 pl – 3mn à pied</li>
+              <li>P : Gymnase M. Guigou – 26 pl – 5mn à pied</li>
+            </ul>
+            <hr style="margin: 1.5rem 0" />
+            <h3>Parkings payants</h3>
+            <ul style="padding-left: 1.2rem">
+              <li>P : Poste (privé) – 25 pl – 3mn à pied</li>
+              <li>P : Sous-Préfecture – 38 pl – 1mn à pied</li>
+              <li>P : Foch - Cely – 36 pl – 1mn à pied</li>
+              <li>P : Girard – 35 pl – 4mn à pied</li>
+              <li>P : Victor Hugo – 39 pl – 4–8mn à pied</li>
+              <li>P : Orciers – 14 pl – 8mn à pied</li>
+              <li>P : Liberté – 26 pl – 1mn à pied</li>
+              <li>P : Général Leclerc – 47 pl – 1mn à pied</li>
+            </ul>
+          </div>
+        </div>
+
         <!-- Options de transport animées -->
         <section class="transport-animated-section">
           <h3 class="transport-title">Options de transport</h3>
           <p class="transport-intro">
             Pour faciliter votre arrivée, voici les différentes options pour
-            rejoindre le lieu de l'hébergement :
+            rejoindre le lieu de l'<i>hé</i>bergement :
           </p>
           <div class="transport-cards">
             <div class="transport-card-anim">
@@ -589,7 +755,7 @@
     <section class="gift-section" id="cadeaux">
       <div class="gift-content">
         <div class="gift-icon">🎁</div>
-        <h2 class="gift-title">Un petit mot doux sur les cadeaux</h2>
+        <h2 class="gift-title"><i>Un petit mot doux sur les cadeaux</i></h2>
         <div class="gift-text">
           <p>
             Votre présence à nos côtés pour célébrer ce moment si précieux
@@ -617,7 +783,7 @@
         <main class="rsvp-form-elegant">
           <div class="form-header">
             <div class="form-ornament">❦</div>
-            <h2 class="form-title">Confirmation de Présence</h2>
+            <h2 class="form-title"><i>Confirmation de Présence</i></h2>
             <p class="form-subtitle">
               Nous avons l'honneur de vous inviter à confirmer votre présence
             </p>
@@ -759,25 +925,39 @@
               <h3 class="section-title">Logistique</h3>
               <div class="form-row">
                 <div class="form-group">
-                  <label for="accommodation">Hébergement souhaité</label>
-                  <select id="accommodation" name="accommodation">
-                    <option value="">Sélectionnez une option</option>
-                    <option value="hotel1">Hôtel 1</option>
-                    <option value="hotel2">Hôtel 2</option>
-                    <option value="other">Autre</option>
-                  </select>
+                  <label for="nuits"
+                    >Nombre de nuits pour loger sur le domaine</label
+                  >
+                  <input
+                    type="number"
+                    id="nuits"
+                    name="nuits"
+                    min="1"
+                    max="2"
+                    placeholder="1 ou 2"
+                    required
+                  />
                 </div>
                 <div class="form-group">
-                  <label for="transport">Transport préféré</label>
-                  <select id="transport" name="transport">
+                  <label>Présence sur le domaine</label>
+                  <select id="presence" name="presence" required>
                     <option value="">Sélectionnez une option</option>
-                    <option value="bus">Bus organisé</option>
-                    <option value="taxi">Taxi</option>
-                    <option value="covoiturage">Covoiturage</option>
-                    <option value="own">Transport personnel</option>
-                    <option value="other">Autre</option>
+                    <option value="15">Seulement le 15/05/2026</option>
+                    <option value="16">Seulement le 16/05/2026</option>
+                    <option value="15-17">Du 15/05 au 17/05</option>
                   </select>
                 </div>
+              </div>
+              <div class="form-group">
+                <label for="transport">Transport préféré</label>
+                <select id="transport" name="transport">
+                  <option value="">Sélectionnez une option</option>
+                  <option value="bus">Bus organisé</option>
+                  <option value="taxi">Taxi</option>
+                  <option value="covoiturage">Covoiturage</option>
+                  <option value="own">Transport personnel</option>
+                  <option value="other">Autre</option>
+                </select>
               </div>
               <div class="form-group">
                 <label for="diet">Régime alimentaire spécial</label>
@@ -827,7 +1007,7 @@
         </div>
         <div class="contactanos-text-half">
           <h2 class="contactanos-title">
-            Pour toute question, n'hésitez pas à nous appeler
+            <i>Pour toute question, n'<i>hé</i>sitez pas à nous appeler</i>
           </h2>
           <div class="contactanos-details">
             <p>
@@ -852,7 +1032,7 @@
             <p>Email: [Adresse email]</p>
           </div>
           <div class="footer-links">
-            <a href="#hebergement">Hébergement</a>
+            <a href="#hebergement"><i>Hé</i>bergement</a>
             <a href="#formulaire">RSVP</a>
             <a href="#transport">Transport</a>
             <a href="#cadeaux">Lista de Regalos</a>

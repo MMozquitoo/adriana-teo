@@ -262,6 +262,11 @@ body {
   .hero-content h1 {
     font-size: 2.2rem;
   }
+  .hero-initials {
+    font-size: 1.8rem !important;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.6rem;
+  }
   .hero-art-photos {
     width: 99vw;
     height: 70vw;
@@ -1319,13 +1324,18 @@ body {
   align-items: center;
 }
 .transport-title {
-  font-size: 6rem !important;
+  font-size: 3.6rem !important;
   letter-spacing: 2px !important;
+  margin-bottom: 2rem !important;
+  text-align: center !important;
 }
 .transport-intro {
-  font-size: 2rem !important;
-  letter-spacing: 2px !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 1px !important;
   line-height: 1.6 !important;
+  text-align: center !important;
+  margin-bottom: 3rem !important;
+  font-family: "Cardo", serif !important;
 }
 /* Tarjetas de transporte minimalistas y sofisticadas */
 .transport-cards {
@@ -1360,10 +1370,13 @@ body {
 
 .transport-card-content {
   font-size: 1.18rem !important;
+  text-align: center !important;
 }
 .transport-card-content h4 {
   font-size: 2.2rem !important;
   letter-spacing: 1px !important;
+  font-family: "Beautifully Delicious Script", cursive !important;
+  margin-bottom: 1.5rem !important;
 }
 
 .transport-card-content p {
@@ -1371,6 +1384,8 @@ body {
   font-size: 1rem;
   line-height: 1.7;
   margin: 0;
+  font-family: "Cardo", serif !important;
+  text-align: center !important;
 }
 
 @media (max-width: 900px) {
@@ -1735,6 +1750,17 @@ body,
   background: #fff !important;
 }
 
+.hero-initials {
+  font-family: "Cardo", serif !important;
+  font-size: 2.5rem !important;
+  font-weight: bold;
+  font-style: normal;
+  letter-spacing: 3px;
+  color: #181818;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
 .hero-clean-title {
   font-family: "Beautifully Delicious Script", cursive !important;
   font-size: 5rem !important;
@@ -1793,9 +1819,9 @@ body,
 .hero-invitation-block {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
-  text-align: left;
+  text-align: center;
   margin: 2rem 0;
   gap: 0.2rem;
 }
@@ -1922,7 +1948,7 @@ body,
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   padding-bottom: 3rem;
 }
 .hero-clean-img-container {
@@ -1964,6 +1990,11 @@ body,
   .hero-clean-text {
     align-items: center;
     padding-bottom: 1.5rem;
+  }
+  .hero-initials {
+    font-size: 2rem !important;
+    letter-spacing: 2px;
+    margin-bottom: 0.8rem;
   }
   .hero-clean-img-container {
     justify-content: center;
@@ -2051,11 +2082,33 @@ body,
 }
 .info-important-text {
   color: #181818;
-  font-size: 2.2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   text-align: center;
   max-width: 900px;
   margin: 0 auto;
+  line-height: 1.4;
+}
+
+.warning-section {
+  text-align: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 8px;
+}
+
+.warning-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.warning-text {
+  color: #856404;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: "Cardo", serif;
   line-height: 1.4;
 }
 

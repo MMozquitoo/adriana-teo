@@ -1781,7 +1781,7 @@ body,
   font-style: normal;
   letter-spacing: 3px;
   color: #181818;
-  margin-bottom: 1rem;
+  margin-bottom: 0.3rem;
   text-align: center;
 }
 
@@ -1851,10 +1851,10 @@ body,
 }
 
 .invitation-date {
-  font-family: "Playfair Display", "Libre Baskerville", "Cormorant Garamond",
-    serif;
-  font-size: 28px;
+  font-family: "Beautifully Delicious Script", cursive !important;
+  font-size: 36px;
   font-weight: bold;
+  font-style: italic;
   letter-spacing: 2px;
   margin-bottom: 0.1rem;
   -webkit-touch-callout: none;

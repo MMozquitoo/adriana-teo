@@ -68,6 +68,24 @@ h6,
   box-sizing: border-box;
 }
 
+/* Desactivar detección automática de enlaces en móviles */
+a[href^="tel:"],
+a[href^="mailto:"] {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+/* Prevenir que los navegadores móviles detecten números como enlaces */
+.hero-invitation-block,
+.invitation-date {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -77,6 +95,12 @@ body {
   color: var(--color-text);
   line-height: 1.6;
   background-color: var(--color-main-bg);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 .container {
@@ -1348,9 +1372,9 @@ body {
 
 .transport-card-anim {
   background: #fff;
-  border: 1.5px solid #d4af37;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(212, 175, 55, 0.07);
+  border: 1.5px solid #181818;
+  border-radius: 0;
+  box-shadow: 0 8px 32px rgba(24, 24, 24, 0.07);
   padding: 2.5rem 2rem 2rem 2rem;
   max-width: 320px;
   min-width: 260px;
@@ -1363,8 +1387,8 @@ body {
 }
 
 .transport-card-anim:hover {
-  box-shadow: 0 16px 48px rgba(212, 175, 55, 0.13);
-  border-color: #bfa14a;
+  box-shadow: 0 16px 48px rgba(24, 24, 24, 0.13);
+  border-color: #000;
   transform: translateY(-4px) scale(1.03);
 }
 
@@ -1833,6 +1857,14 @@ body,
   font-weight: bold;
   letter-spacing: 2px;
   margin-bottom: 0.1rem;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-decoration: none !important;
+  color: #181818 !important;
 }
 
 .invitation-time-place {
@@ -1855,7 +1887,7 @@ body,
 
 .form-title-text {
   font-family: "Cardo", serif !important;
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: bold;
   margin: 0 0 1.5rem 0;
   color: #1a1a1a;
